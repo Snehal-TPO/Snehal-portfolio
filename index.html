@@ -1,13 +1,882 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Page Title</title>
-</head>
-<body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Snehal Pol, Technical Product Owner portfolio for platform, API, AI systems, and SaaS product delivery.">
+    <title>Snehal Pol | Technical Product Owner Portfolio</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+      :root {
+        --ink: #172026;
+        --muted: #65737e;
+        --line: #dce3e8;
+        --paper: #f7faf9;
+        --surface: #ffffff;
+        --teal: #087f8c;
+        --coral: #c95f43;
+        --gold: #b98521;
+        --green: #4d7c59;
+        --shadow: 0 18px 45px rgba(23, 32, 38, 0.12);
+      }
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+      * {
+        box-sizing: border-box;
+      }
 
-</body>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        color: var(--ink);
+        background: var(--paper);
+        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.6;
+      }
+
+      a {
+        color: var(--teal);
+      }
+
+      .navbar {
+        background: rgba(247, 250, 249, 0.94);
+        border-bottom: 1px solid rgba(220, 227, 232, 0.85);
+        backdrop-filter: blur(14px);
+      }
+
+      .navbar-brand {
+        color: var(--ink);
+        font-weight: 800;
+      }
+
+      .nav-link {
+        color: #40505a;
+        font-weight: 650;
+        transition: color 180ms ease, transform 180ms ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus {
+        color: var(--teal);
+        transform: translateY(-1px);
+      }
+
+      .btn {
+        border-radius: 8px;
+        font-weight: 700;
+        transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+      }
+
+      .btn:hover,
+      .btn:focus {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 24px rgba(23, 32, 38, 0.16);
+      }
+
+      .btn-primary {
+        --bs-btn-bg: var(--teal);
+        --bs-btn-border-color: var(--teal);
+        --bs-btn-hover-bg: #066c78;
+        --bs-btn-hover-border-color: #066c78;
+      }
+
+      .btn-outline-dark {
+        --bs-btn-color: var(--ink);
+        --bs-btn-border-color: #9cadb5;
+        --bs-btn-hover-bg: var(--ink);
+        --bs-btn-hover-border-color: var(--ink);
+      }
+
+      .hero {
+        position: relative;
+        min-height: 86vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        background: var(--ink);
+      }
+
+      .hero::before {
+        position: absolute;
+        inset: 0;
+        content: "";
+        background:
+          linear-gradient(90deg, rgba(18, 25, 29, 0.88) 0%, rgba(18, 25, 29, 0.66) 42%, rgba(18, 25, 29, 0.18) 76%),
+          url("assets/product-owner-hero.png") center right / cover no-repeat;
+      }
+
+      .hero .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .eyebrow {
+        color: #94d7dd;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      .hero h1 {
+        color: #ffffff;
+        font-size: clamp(2.55rem, 8vw, 6.3rem);
+        font-weight: 850;
+        line-height: 0.96;
+        letter-spacing: 0;
+        max-width: 820px;
+      }
+
+      .hero-copy {
+        color: #eef7f5;
+        max-width: 760px;
+        font-size: clamp(1.02rem, 2.2vw, 1.28rem);
+      }
+
+      .hero-meta {
+        color: #dbe7e6;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+      }
+
+      .hero-meta span {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.42rem;
+        min-height: 2.2rem;
+        padding: 0.36rem 0.7rem;
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .hero .eyebrow,
+      .hero h1,
+      .hero-copy,
+      .hero-meta,
+      .hero .btn {
+        animation: heroRise 760ms ease both;
+      }
+
+      .hero h1 {
+        animation-delay: 90ms;
+      }
+
+      .hero-copy {
+        animation-delay: 180ms;
+      }
+
+      .hero-meta {
+        animation-delay: 270ms;
+      }
+
+      .hero .btn {
+        animation-delay: 360ms;
+      }
+
+      .section-pad {
+        padding: 5rem 0;
+      }
+
+      .section-title {
+        max-width: 760px;
+      }
+
+      .section-title h2 {
+        font-size: clamp(2rem, 5vw, 3.4rem);
+        font-weight: 830;
+        line-height: 1.03;
+      }
+
+      .section-title p {
+        color: var(--muted);
+        font-size: 1.08rem;
+      }
+
+      .metric-strip {
+        margin-top: -3.7rem;
+        position: relative;
+        z-index: 3;
+      }
+
+      .metric-panel {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+      }
+
+      .metric-col + .metric-col {
+        border-top: 1px solid var(--line);
+      }
+
+      .metric {
+        min-height: 8.8rem;
+        padding: 1.45rem;
+      }
+
+      .metric strong {
+        display: block;
+        color: var(--ink);
+        font-size: clamp(1.9rem, 5vw, 3rem);
+        line-height: 1;
+      }
+
+      .metric span {
+        color: var(--muted);
+        display: block;
+        margin-top: 0.65rem;
+      }
+
+      .capability-card,
+      .project-card,
+      .timeline-item,
+      .contact-panel {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: 0 12px 28px rgba(23, 32, 38, 0.07);
+        transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+      }
+
+      .capability-card:hover,
+      .project-card:hover,
+      .timeline-item:hover,
+      .contact-panel:hover {
+        border-color: rgba(8, 127, 140, 0.34);
+        box-shadow: 0 18px 42px rgba(23, 32, 38, 0.12);
+        transform: translateY(-4px);
+      }
+
+      .capability-card {
+        height: 100%;
+        padding: 1.35rem;
+      }
+
+      .icon-tile {
+        width: 2.8rem;
+        height: 2.8rem;
+        display: inline-grid;
+        place-items: center;
+        border-radius: 8px;
+        color: #ffffff;
+        background: var(--teal);
+        font-size: 1.35rem;
+        transition: transform 220ms ease;
+      }
+
+      .capability-card:hover .icon-tile {
+        transform: rotate(-4deg) scale(1.04);
+      }
+
+      .icon-coral {
+        background: var(--coral);
+      }
+
+      .icon-gold {
+        background: var(--gold);
+      }
+
+      .icon-green {
+        background: var(--green);
+      }
+
+      .capability-card h3,
+      .project-card h3 {
+        margin-top: 1rem;
+        font-size: 1.18rem;
+        font-weight: 800;
+      }
+
+      .capability-card p,
+      .project-card p,
+      .timeline-item p {
+        color: var(--muted);
+      }
+
+      .project-card {
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .project-top {
+        min-height: 10.5rem;
+        padding: 1.25rem;
+        color: #ffffff;
+        background:
+          linear-gradient(135deg, rgba(8, 127, 140, 0.95), rgba(23, 32, 38, 0.92)),
+          radial-gradient(circle at top right, rgba(255, 255, 255, 0.24), transparent 34%);
+      }
+
+      .project-card:nth-child(2n) .project-top {
+        background:
+          linear-gradient(135deg, rgba(201, 95, 67, 0.96), rgba(23, 32, 38, 0.9)),
+          radial-gradient(circle at top right, rgba(255, 255, 255, 0.24), transparent 34%);
+      }
+
+      .project-card:nth-child(3n) .project-top {
+        background:
+          linear-gradient(135deg, rgba(77, 124, 89, 0.96), rgba(23, 32, 38, 0.9)),
+          radial-gradient(circle at top right, rgba(255, 255, 255, 0.24), transparent 34%);
+      }
+
+      .tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .tag-list li {
+        color: #42515a;
+        background: #eef4f4;
+        border: 1px solid #d8e4e4;
+        border-radius: 999px;
+        padding: 0.32rem 0.66rem;
+        font-size: 0.88rem;
+        font-weight: 650;
+        transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+      }
+
+      .tag-list li:hover {
+        transform: translateY(-1px);
+        border-color: rgba(8, 127, 140, 0.3);
+        background: #e6f2f1;
+      }
+
+      .project-body {
+        padding: 1.25rem;
+      }
+
+      .timeline {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .timeline-item {
+        padding: 1.35rem;
+      }
+
+      .timeline-date {
+        color: var(--coral);
+        font-size: 0.9rem;
+        font-weight: 800;
+      }
+
+      .timeline-item h3 {
+        font-size: 1.18rem;
+        font-weight: 800;
+      }
+
+      .toolbox {
+        background: #172026;
+        color: #ffffff;
+      }
+
+      .toolbox .section-title p {
+        color: #d4dfdf;
+      }
+
+      .toolbox .tag-list li {
+        color: #f7faf9;
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.18);
+      }
+
+      .contact-panel {
+        padding: clamp(1.4rem, 4vw, 2.4rem);
+      }
+
+      .contact-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        color: var(--ink);
+        font-weight: 750;
+        text-decoration: none;
+        transition: color 180ms ease, transform 180ms ease;
+      }
+
+      .contact-link:hover,
+      .contact-link:focus {
+        color: var(--teal);
+        transform: translateX(3px);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 680ms ease, transform 680ms ease;
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @keyframes heroRise {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      footer {
+        color: #61717b;
+        padding: 2rem 0;
+        border-top: 1px solid var(--line);
+      }
+
+      @media (max-width: 991.98px) {
+        .hero {
+          min-height: 84vh;
+          padding-top: 5rem;
+        }
+
+        .hero::before {
+          background:
+            linear-gradient(180deg, rgba(18, 25, 29, 0.9) 0%, rgba(18, 25, 29, 0.76) 56%, rgba(18, 25, 29, 0.42) 100%),
+            url("assets/product-owner-hero.png") center / cover no-repeat;
+        }
+
+        .metric-strip {
+          margin-top: 0;
+          padding-top: 1.25rem;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .metric-col + .metric-col {
+          border-top: 0;
+          border-left: 1px solid var(--line);
+        }
+      }
+
+      @media (max-width: 575.98px) {
+        .hero {
+          min-height: 82vh;
+        }
+
+        .hero h1 {
+          font-size: clamp(2.45rem, 15vw, 4.2rem);
+        }
+
+        .hero-meta span {
+          width: 100%;
+        }
+
+        .section-pad {
+          padding: 3.5rem 0;
+        }
+
+        .metric {
+          min-height: auto;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#home">Snehal Pol</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#portfolioNav" aria-controls="portfolioNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="portfolioNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item"><a class="nav-link" href="#capabilities">Capabilities</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            <li class="nav-item ms-lg-2">
+              <a class="btn btn-primary btn-sm px-3" href="assets/snehal-pol-resume.pdf" target="_blank" rel="noopener">
+                <i class="bi bi-file-earmark-arrow-down me-1" aria-hidden="true"></i> Resume
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main id="home">
+      <section class="hero">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-9 col-xl-8">
+              <p class="eyebrow mb-3">Technical Product Owner | Platform & API Products | AI Systems | SaaS</p>
+              <h1>Snehal Pol</h1>
+              <p class="hero-copy mt-4">
+                I shape platform products from strategy to delivery, translating complex business needs into API-driven systems, reusable services, AI workflows, and measurable product outcomes.
+              </p>
+              <div class="hero-meta mt-4">
+                <span><i class="bi bi-geo-alt" aria-hidden="true"></i> Pune, India</span>
+                <span><i class="bi bi-globe2" aria-hidden="true"></i> Open to US, EU & global remote roles</span>
+                <span><i class="bi bi-people" aria-hidden="true"></i> Remote & asynchronous teams</span>
+              </div>
+              <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
+                <a class="btn btn-primary btn-lg px-4" href="#projects">
+                  <i class="bi bi-kanban me-2" aria-hidden="true"></i>View Work
+                </a>
+                <a class="btn btn-outline-light btn-lg px-4" href="#contact">
+                  <i class="bi bi-send me-2" aria-hidden="true"></i>Get in Touch
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="metric-strip reveal">
+        <div class="container">
+          <div class="metric-panel">
+            <div class="row g-0">
+              <div class="col-md-4 metric-col">
+                <div class="metric">
+                  <strong>9+</strong>
+                  <span>Years across product ownership, platform delivery, UI/UX, and engineering collaboration.</span>
+                </div>
+              </div>
+              <div class="col-md-4 metric-col">
+                <div class="metric">
+                  <strong>60%+</strong>
+                  <span>Manual effort reduction through an AI-powered document enrichment workflow.</span>
+                </div>
+              </div>
+              <div class="col-md-4 metric-col">
+                <div class="metric">
+                  <strong>0 -> 1</strong>
+                  <span>Multi-tenant SaaS and campaign platforms taken from concept into delivery.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-pad reveal" id="capabilities">
+        <div class="container">
+          <div class="section-title mb-5">
+            <p class="eyebrow">Product Ownership Strengths</p>
+            <h2>Clear requirements, dependable delivery, and platform thinking.</h2>
+            <p class="mt-3">My strongest work sits where product strategy, system behavior, engineering detail, and user outcomes need to line up cleanly.</p>
+          </div>
+          <div class="row g-4">
+            <div class="col-md-6 col-xl-4">
+              <article class="capability-card">
+                <span class="icon-tile"><i class="bi bi-diagram-3" aria-hidden="true"></i></span>
+                <h3>Platform Product Strategy</h3>
+                <p>Platform capabilities, roadmap definition, KPI framing, stakeholder alignment, and data-driven prioritization.</p>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <article class="capability-card">
+                <span class="icon-tile icon-coral"><i class="bi bi-braces" aria-hidden="true"></i></span>
+                <h3>API & System Design</h3>
+                <p>REST APIs, API contracts, JSON schemas, SDK integrations, data flows, system integration, and scalable service patterns.</p>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <article class="capability-card">
+                <span class="icon-tile icon-gold"><i class="bi bi-lightning-charge" aria-hidden="true"></i></span>
+                <h3>Agile Execution</h3>
+                <p>Sprint readiness, backlog grooming, dependency management, user stories, acceptance criteria, Scrum, and Kanban.</p>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <article class="capability-card">
+                <span class="icon-tile icon-green"><i class="bi bi-stars" aria-hidden="true"></i></span>
+                <h3>AI & Automation</h3>
+                <p>OpenAI, Gemini, prompt engineering, embeddings, AI workflows, document intelligence, content enrichment, and n8n.</p>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <article class="capability-card">
+                <span class="icon-tile"><i class="bi bi-window-sidebar" aria-hidden="true"></i></span>
+                <h3>UI/UX & Frontend</h3>
+                <p>Journey design, UX optimization, WordPress, HTML, CSS, JavaScript, React, reusable components, and responsive systems.</p>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <article class="capability-card">
+                <span class="icon-tile icon-coral"><i class="bi bi-activity" aria-hidden="true"></i></span>
+                <h3>Release & Quality</h3>
+                <p>Release planning, risk management, observability, logging, monitoring, performance optimization, and reliability.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-pad bg-white reveal" id="projects">
+        <div class="container">
+          <div class="section-title mb-5">
+            <p class="eyebrow">Selected Product Work</p>
+            <h2>Portfolio projects built around systems, users, and measurable delivery.</h2>
+          </div>
+          <div class="row g-4">
+            <div class="col-lg-6">
+              <article class="project-card">
+                <div class="project-top">
+                  <i class="bi bi-filetype-pdf fs-2" aria-hidden="true"></i>
+                  <h3>AI-Powered PDF Enrichment Platform</h3>
+                </div>
+                <div class="project-body">
+                  <p>Built an AI pipeline for PDF to metadata, summaries, taxonomy, teasers, and campaign-ready descriptions.</p>
+                  <ul class="tag-list">
+                    <li>AI workflows</li>
+                    <li>Document intelligence</li>
+                    <li>Metadata automation</li>
+                    <li>60%+ effort reduction</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+            <div class="col-lg-6">
+              <article class="project-card">
+                <div class="project-top">
+                  <i class="bi bi-share fs-2" aria-hidden="true"></i>
+                  <h3>Unified Content Syndication Platform</h3>
+                </div>
+                <div class="project-body">
+                  <p>Led a unified product experience for web, email, and ad campaigns with API-driven workflows for scalable campaign execution.</p>
+                  <ul class="tag-list">
+                    <li>Product roadmap</li>
+                    <li>API workflows</li>
+                    <li>Campaign systems</li>
+                    <li>Stakeholder alignment</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+            <div class="col-lg-6">
+              <article class="project-card">
+                <div class="project-top">
+                  <i class="bi bi-buildings fs-2" aria-hidden="true"></i>
+                  <h3>Demand Hub SaaS Platform</h3>
+                </div>
+                <div class="project-body">
+                  <p>Built a multi-tenant SaaS platform for campaign and lead management, including gated content flows, forms, and conversion-focused UX.</p>
+                  <ul class="tag-list">
+                    <li>0 -> 1 SaaS</li>
+                    <li>Lead capture</li>
+                    <li>User journeys</li>
+                    <li>UX optimization</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+            <div class="col-lg-6">
+              <article class="project-card">
+                <div class="project-top">
+                  <i class="bi bi-envelope-paper fs-2" aria-hidden="true"></i>
+                  <h3>Email Campaign Manager</h3>
+                </div>
+                <div class="project-body">
+                  <p>Developed an email automation platform with asset hosting, tracking, and analytics dashboards for campaign performance insights.</p>
+                  <ul class="tag-list">
+                    <li>Automation</li>
+                    <li>Asset hosting</li>
+                    <li>Analytics dashboards</li>
+                    <li>User tracking</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-pad reveal" id="experience">
+        <div class="container">
+          <div class="row g-5 align-items-start">
+            <div class="col-lg-4">
+              <div class="section-title sticky-lg-top" style="top: 6rem;">
+                <p class="eyebrow">Experience</p>
+                <h2>Product leadership grounded in delivery.</h2>
+                <p class="mt-3">A background spanning product ownership, UI/UX leadership, platform delivery, and web engineering.</p>
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="timeline">
+                <article class="timeline-item">
+                  <div class="timeline-date">Mar 2022 - Feb 2026</div>
+                  <h3>Technical Product Owner - Platform & AI Systems, Foundry (SSG)</h3>
+                  <p>Defined platform services, reusable capabilities, API contracts, JSON schemas, data services, sprint readiness, non-functional requirements, and observability needs across multiple squads.</p>
+                </article>
+                <article class="timeline-item">
+                  <div class="timeline-date">Dec 2016 - Mar 2022</div>
+                  <h3>Product & UI/UX Lead - Digital Platforms, Selling Simplified India Pvt. Ltd.</h3>
+                  <p>Delivered digital platforms and campaign systems for global clients, managed cross-functional teams, wrote product requirements, and improved engagement through UX optimization.</p>
+                </article>
+                <article class="timeline-item">
+                  <div class="timeline-date">Sep 2012 - Mar 2013</div>
+                  <h3>Associate Software Developer, Vidushi Infotech Pvt. Ltd.</h3>
+                  <p>Developed web applications using WordPress, HTML, CSS, JavaScript, PHP, and MySQL while supporting frontend and backend integration workflows.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-pad toolbox reveal">
+        <div class="container">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-5">
+              <div class="section-title">
+                <p class="eyebrow">Tools & Certifications</p>
+                <h2>Comfortable with product systems from discovery to release.</h2>
+                <p class="mt-3">I use product, analytics, AI, engineering, and delivery tools to keep teams aligned and releases practical.</p>
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <ul class="tag-list mb-4">
+                <li>Jira</li>
+                <li>Confluence</li>
+                <li>Productboard</li>
+                <li>Monday.com</li>
+                <li>GA4</li>
+                <li>SQL</li>
+                <li>AWS</li>
+                <li>Git</li>
+                <li>CI/CD concepts</li>
+                <li>OpenAI</li>
+                <li>Gemini</li>
+                <li>n8n</li>
+              </ul>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="p-3 border border-light-subtle rounded-2 h-100">
+                    <strong>PGDM - Project Management</strong>
+                    <p class="mb-0 text-white-50">MIT School of Management, Advanced Project Management - Marketing</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="p-3 border border-light-subtle rounded-2 h-100">
+                    <strong>B.E. - Computer Science & Engineering</strong>
+                    <p class="mb-0 text-white-50">AMIETE</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="p-3 border border-light-subtle rounded-2 h-100">
+                    <strong>Agile Product Owner</strong>
+                    <p class="mb-0 text-white-50">LinkedIn, 2025</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="p-3 border border-light-subtle rounded-2 h-100">
+                    <strong>Aha! Product Management Professional</strong>
+                    <p class="mb-0 text-white-50">Certificate, 2024</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-pad reveal" id="contact">
+        <div class="container">
+          <div class="contact-panel">
+            <div class="row g-4 align-items-center">
+              <div class="col-lg-7">
+                <p class="eyebrow">Contact</p>
+                <h2 class="fw-bold">Let's build platform products that are clear, scalable, and useful.</h2>
+                <p class="text-secondary mb-0">Available for Technical Product Owner, Product Manager, Platform Product, AI Systems, and SaaS product roles.</p>
+              </div>
+              <div class="col-lg-5">
+                <div class="d-grid gap-3">
+                  <a class="contact-link" href="mailto:spol.2722@gmail.com">
+                    <i class="bi bi-envelope" aria-hidden="true"></i> spol.2722@gmail.com
+                  </a>
+                  <a class="contact-link" href="tel:+919665146492">
+                    <i class="bi bi-telephone" aria-hidden="true"></i> +91 96651 46492
+                  </a>
+                  <a class="contact-link" href="https://linkedin.com/in/snehalpol22" target="_blank" rel="noopener">
+                    <i class="bi bi-linkedin" aria-hidden="true"></i> linkedin.com/in/snehalpol22
+                  </a>
+                  <a class="btn btn-primary mt-2" href="assets/snehal-pol-resume.pdf" target="_blank" rel="noopener">
+                    <i class="bi bi-file-earmark-arrow-down me-2" aria-hidden="true"></i>Download Resume
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+        <span>&copy; 2026 Snehal Pol. Product Ownership Portfolio.</span>
+        <span>Platform products | API systems | AI workflows | SaaS delivery</span>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const animatedItems = document.querySelectorAll(
+        ".reveal, .capability-card, .project-card, .timeline-item, .contact-panel"
+      );
+
+      animatedItems.forEach((item) => item.classList.add("reveal"));
+
+      const revealItems = () => {
+        animatedItems.forEach((item) => {
+          const itemTop = item.getBoundingClientRect().top;
+          const triggerPoint = window.innerHeight * 0.88;
+
+          if (itemTop < triggerPoint) {
+            item.classList.add("is-visible");
+          }
+        });
+      };
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.14 }
+        );
+
+        animatedItems.forEach((item) => observer.observe(item));
+      } else {
+        revealItems();
+        window.addEventListener("scroll", revealItems, { passive: true });
+      }
+    </script>
+  </body>
 </html>
-
